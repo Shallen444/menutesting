@@ -1,175 +1,0 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>قائمة المقهى</title>
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts for Arabic -->
-    <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
-
-    <style>
-        body {
-            background-color: #f9fafb;
-        }
-        .menu-font, .body-font {
-            font-family: 'Cairo', sans-serif;
-        }
-        .menu-item:hover {
-            transform: translateY(-2px);
-            transition: all 0.3s ease;
-        }
-        .category-tab.active {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-        }
-        .fade-in {
-            animation: fadeIn 0.5s ease-in;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-    </style>
-</head>
-
-<body class="body-font">
-    <div class="max-w-6xl mx-auto px-4 py-12">
-        <h1 class="text-4xl font-bold text-center mb-8 menu-font">قائمة المقهى</h1>
-
-        <!-- Tabs -->
-        <div class="flex flex-wrap justify-center gap-4 mb-8">
-            <button onclick="showCategory('coffee')" class="category-tab active px-6 py-3 rounded-full font-medium transition-all duration-300 hover:shadow-lg" id="coffee-tab">
-                ☕ القهوة والإسبريسو
-            </button>
-            <button onclick="showCategory('food')" class="category-tab px-6 py-3 rounded-full font-medium bg-white text-gray-700 hover:bg-gray-50 transition-all duration-300 hover:shadow-lg" id="food-tab">
-                🥪 المأكولات
-            </button>
-            <button onclick="showCategory('pastries')" class="category-tab px-6 py-3 rounded-full font-medium bg-white text-gray-700 hover:bg-gray-50 transition-all duration-300 hover:shadow-lg" id="pastries-tab">
-                🥐 الحلويات والمخبوزات
-            </button>
-            <button onclick="showCategory('beverages')" class="category-tab px-6 py-3 rounded-full font-medium bg-white text-gray-700 hover:bg-gray-50 transition-all duration-300 hover:shadow-lg" id="beverages-tab">
-                🧊 المشروبات الباردة
-            </button>
-        </div>
-
-        <!-- Menu Sections -->
-        <div id="menu-content" class="fade-in">
-            <!-- القهوة -->
-            <div id="coffee" class="menu-section">
-                <div class="grid gap-6 md:grid-cols-2">
-                    <div class="menu-item bg-white rounded-xl p-6 shadow-lg hover:shadow-xl">
-                        <div class="flex justify-between items-start mb-3">
-                            <h3 class="menu-font text-xl font-semibold text-gray-800">إسبريسو</h3>
-                            <span class="text-purple-600 font-bold text-lg">$3.50</span>
-                        </div>
-                        <p class="text-gray-600 text-sm">جرعة قوية وغنية من مزيج القهوة الخاص بنا.</p>
-                    </div>
-
-                    <div class="menu-item bg-white rounded-xl p-6 shadow-lg hover:shadow-xl">
-                        <div class="flex justify-between items-start mb-3">
-                            <h3 class="menu-font text-xl font-semibold text-gray-800">كابتشينو</h3>
-                            <span class="text-purple-600 font-bold text-lg">$4.75</span>
-                        </div>
-                        <p class="text-gray-600 text-sm">مزيج مثالي من الإسبريسو والحليب المبخر ورغوة ناعمة.</p>
-                    </div>
-
-                    <div class="menu-item bg-white rounded-xl p-6 shadow-lg hover:shadow-xl">
-                        <div class="flex justify-between items-start mb-3">
-                            <h3 class="menu-font text-xl font-semibold text-gray-800">كافيه لاتيه</h3>
-                            <span class="text-purple-600 font-bold text-lg">$5.00</span>
-                        </div>
-                        <p class="text-gray-600 text-sm">إسبريسو مع حليب مبخر لمذاق سلس وكريمي.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- المأكولات -->
-            <div id="food" class="menu-section hidden">
-                <div class="grid gap-6 md:grid-cols-2">
-                    <div class="menu-item bg-white rounded-xl p-6 shadow-lg hover:shadow-xl">
-                        <div class="flex justify-between items-start mb-3">
-                            <h3 class="menu-font text-xl font-semibold text-gray-800">توست الأفوكادو</h3>
-                            <span class="text-purple-600 font-bold text-lg">$12</span>
-                        </div>
-                        <p class="text-gray-600 text-sm">خبز سوردو مع أفوكادو مهروس وطماطم وجبنة فيتا وتوابل.</p>
-                    </div>
-
-                    <div class="menu-item bg-white rounded-xl p-6 shadow-lg hover:shadow-xl">
-                        <div class="flex justify-between items-start mb-3">
-                            <h3 class="menu-font text-xl font-semibold text-gray-800">بانيني مشوي</h3>
-                            <span class="text-purple-600 font-bold text-lg">$10</span>
-                        </div>
-                        <p class="text-gray-600 text-sm">ديك رومي وجبنة سويسرية مع سبانخ وصلصة بيستو مجففة على خبز تشاباتا.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- الحلويات والمخبوزات -->
-            <div id="pastries" class="menu-section hidden">
-                <div class="grid gap-6 md:grid-cols-2">
-                    <div class="menu-item bg-white rounded-xl p-6 shadow-lg hover:shadow-xl">
-                        <div class="flex justify-between items-start mb-3">
-                            <h3 class="menu-font text-xl font-semibold text-gray-800">كرواسون زبدة</h3>
-                            <span class="text-purple-600 font-bold text-lg">$4</span>
-                        </div>
-                        <p class="text-gray-600 text-sm">كرواسون فرنسي طازج مقرمش وغني بالزبدة.</p>
-                    </div>
-
-                    <div class="menu-item bg-white rounded-xl p-6 shadow-lg hover:shadow-xl">
-                        <div class="flex justify-between items-start mb-3">
-                            <h3 class="menu-font text-xl font-semibold text-gray-800">مافن شوكولاتة</h3>
-                            <span class="text-purple-600 font-bold text-lg">$5</span>
-                        </div>
-                        <p class="text-gray-600 text-sm">مافن شوكولاتة غني مع قطع شوكولاتة.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- المشروبات الباردة -->
-            <div id="beverages" class="menu-section hidden">
-                <div class="grid gap-6 md:grid-cols-2">
-                    <div class="menu-item bg-white rounded-xl p-6 shadow-lg hover:shadow-xl">
-                        <div class="flex justify-between items-start mb-3">
-                            <h3 class="menu-font text-xl font-semibold text-gray-800">قهوة مثلجة</h3>
-                            <span class="text-purple-600 font-bold text-lg">$4.25</span>
-                        </div>
-                        <p class="text-gray-600 text-sm">قهوة باردة تقدم مع مكعبات الثلج واختيارك من الحليب.</p>
-                    </div>
-
-                    <div class="menu-item bg-white rounded-xl p-6 shadow-lg hover:shadow-xl">
-                        <div class="flex justify-between items-start mb-3">
-                            <h3 class="menu-font text-xl font-semibold text-gray-800">عصير ليمون طازج</h3>
-                            <span class="text-purple-600 font-bold text-lg">$4</span>
-                        </div>
-                        <p class="text-gray-600 text-sm">عصير ليمون طازج مع نعناع منعش.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        function showCategory(category) {
-            const sections = document.querySelectorAll('.menu-section');
-            sections.forEach(section => section.classList.add('hidden'));
-            document.getElementById(category).classList.remove('hidden');
-
-            const tabs = document.querySelectorAll('.category-tab');
-            tabs.forEach(tab => {
-                tab.classList.remove('active');
-                tab.classList.add('bg-white', 'text-gray-700', 'hover:bg-gray-50');
-            });
-
-            const activeTab = document.getElementById(category + '-tab');
-            activeTab.classList.add('active');
-            activeTab.classList.remove('bg-white', 'text-gray-700', 'hover:bg-gray-50');
-
-            const content = document.getElementById('menu-content');
-            content.classList.remove('fade-in');
-            setTimeout(() => content.classList.add('fade-in'), 10);
-        }
-    </script>
-</body>
-</html>
