@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cafe Menu</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter&family=Playfair+Display&display=swap" rel="stylesheet">
+    <style>
+        body {
+            @apply bg-gray-50;
+        }
+        .menu-font {
+            font-family: 'Playfair Display', serif;
+        }
+        .body-font {
+            font-family: 'Inter', sans-serif;
+        }
+        .menu-item:hover {
+            transform: translateY(-2px);
+            transition: all 0.3s ease;
+        }
+        .category-tab.active {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        .fade-in {
+            animation: fadeIn 0.5s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+
+<body class="body-font">
+    <div class="max-w-6xl mx-auto px-4 py-12">
+        <h1 class="text-4xl font-bold text-center mb-8 menu-font">Our Menu</h1>
+
+        <!-- Category Tabs -->
+        <div class="flex flex-wrap justify-center gap-4 mb-8">
+            <button onclick="showCategory('coffee')" class="category-tab active px-6 py-3 rounded-full font-medium transition-all duration-300 hover:shadow-lg" id="coffee-tab">
+                ☕ Coffee & Espresso
+            </button>
+            <button onclick="showCategory('food')" class="category-tab px-6 py-3 rounded-full font-medium bg-white text-gray-700 hover:bg-gray-50 transition-all duration-300 hover:shadow-lg" id="food-tab">
+                🥪 Food
+            </button>
+            <button onclick="showCategory('pastries')" class="category-tab px-6 py-3 rounded-full font-medium bg-white text-gray-700 hover:bg-gray-50 transition-all duration-300 hover:shadow-lg" id="pastries-tab">
+                🥐 Pastries & Sweets
+            </button>
+            <button onclick="showCategory('beverages')" class="category-tab px-6 py-3 rounded-full font-medium bg-white text-gray-700 hover:bg-gray-50 transition-all duration-300 hover:shadow-lg" id="beverages-tab">
+                🧊 Cold Drinks
+            </button>
+        </div>
+
+        <!-- ✅ Your menu content (copy the Coffee, Food, Pastries, Beverages sections here) -->
+        <!-- For example: -->
+        <div id="menu-content" class="fade-in">
+            <!-- Coffee Section -->
+            <div id="coffee" class="menu-section">
+                <div class="grid gap-6 md:grid-cols-2">
+                    <div class="menu-item bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300">
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="menu-font text-xl font-semibold text-gray-800">Espresso</h3>
+                            <span class="text-purple-600 font-bold text-lg">$3.50</span>
+                        </div>
+                        <p class="text-gray-600 text-sm leading-relaxed">Rich, bold shot of our signature house blend.</p>
+                    </div>
+                    <!-- Repeat for other coffee items -->
+                </div>
+            </div>
+
+            <!-- Food Section -->
+            <div id="food" class="menu-section hidden">
+                <div class="grid gap-6 md:grid-cols-2">
+                    <div class="menu-item bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300">
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="menu-font text-xl font-semibold text-gray-800">Avocado Toast</h3>
+                            <span class="text-purple-600 font-bold text-lg">$12</span>
+                        </div>
+                        <p class="text-gray-600 text-sm leading-relaxed">Smashed avocado on sourdough with cherry tomatoes, feta, and everything seasoning.</p>
+                    </div>
+                    <!-- Repeat for other food items -->
+                </div>
+            </div>
+
+            <!-- Pastries Section -->
+            <div id="pastries" class="menu-section hidden">
+                <div class="grid gap-6 md:grid-cols-2">
+                    <div class="menu-item bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300">
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="menu-font text-xl font-semibold text-gray-800">Butter Croissant</h3>
+                            <span class="text-purple-600 font-bold text-lg">$4</span>
+                        </div>
+                        <p class="text-gray-600 text-sm leading-relaxed">Flaky, buttery French croissant baked fresh daily.</p>
+                    </div>
+                    <!-- Repeat for other pastries -->
+                </div>
+            </div>
+
+            <!-- Beverages Section -->
+            <div id="beverages" class="menu-section hidden">
+                <div class="grid gap-6 md:grid-cols-2">
+                    <div class="menu-item bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300">
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="menu-font text-xl font-semibold text-gray-800">Iced Coffee</h3>
+                            <span class="text-purple-600 font-bold text-lg">$4.25</span>
+                        </div>
+                        <p class="text-gray-600 text-sm leading-relaxed">Cold brew coffee served over ice with your choice of milk.</p>
+                    </div>
+                    <!-- Repeat for other beverages -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showCategory(category) {
+            const sections = document.querySelectorAll('.menu-section');
+            sections.forEach(section => section.classList.add('hidden'));
+            document.getElementById(category).classList.remove('hidden');
+
+            const tabs = document.querySelectorAll('.category-tab');
+            tabs.forEach(tab => {
+                tab.classList.remove('active');
+                tab.classList.add('bg-white', 'text-gray-700', 'hover:bg-gray-50');
+            });
+
+            const activeTab = document.getElementById(category + '-tab');
+            activeTab.classList.add('active');
+            activeTab.classList.remove('bg-white', 'text-gray-700', 'hover:bg-gray-50');
+
+            const content = document.getElementById('menu-content');
+            content.classList.remove('fade-in');
+            setTimeout(() => content.classList.add('fade-in'), 10);
+        }
+    </script>
+</body>
+</html>
