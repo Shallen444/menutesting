@@ -1,168 +1,224 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>قائمة المقهى</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>قائمة المقهى</title>
 
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter&family=Playfair+Display&display=swap" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter&family=Playfair+Display&display=swap"
+    rel="stylesheet"
+  />
 
-    <style>
-        .menu-font {
-            font-family: 'Playfair Display', serif;
-        }
-        .body-font {
-            font-family: 'Inter', sans-serif;
-        }
-        .menu-item:hover {
-            transform: translateY(-2px);
-            transition: all 0.3s ease;
-        }
-        .category-tab {
-            background-color: white;
-            color: #374151; /* gray-700 */
-            transition: all 0.3s ease;
-        }
-        .category-tab:hover {
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-        .category-tab.active {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-        }
-        .fade-in {
-            animation: fadeIn 0.5s ease-in;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-    </style>
+  <style>
+    body {
+      background-color: #d0cbb1;
+    }
+    .menu-font {
+      font-family: "Playfair Display", serif;
+      color: #3a3a2e; /* Dark gray-green for headings */
+    }
+    .body-font {
+      font-family: "Inter", sans-serif;
+      color: #5e6150; /* Medium olive gray for body text */
+    }
+    .menu-item:hover {
+      transform: translateY(-2px);
+      transition: all 0.3s ease;
+    }
+    .category-tab {
+      background-color: white;
+      color: #6b7662; /* Buttons base color */
+      transition: all 0.3s ease;
+    }
+    .category-tab:hover {
+      background-color: #b5b895; /* Pale sage hover */
+      color: #3a3a2e; /* Dark text on hover */
+    }
+    .category-tab.active {
+      background: linear-gradient(135deg, #8f9b70 0%, #6b7662 100%);
+      color: white;
+    }
+    .fade-in {
+      animation: fadeIn 0.5s ease-in;
+    }
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
 </head>
 
-<!-- ✅ Background color set here -->
-<body class="body-font bg-[#d1cbb1]">
+<body class="body-font">
 
-    <div class="max-w-6xl mx-auto px-4 py-12">
-        
-        <!-- ✅ Logo and Title -->
-        <div class="text-center mb-8">
-            <img src="https://i.postimg.cc/KzyLNnzN/S-logo.png" alt="شعار المقهى" class="mx-auto mb-4" style="width: 400px; height: auto;" />
-            <h1 class="text-4xl font-bold">قائمة المقهى</h1>
-        </div>
-
-        <!-- ✅ Category Tabs -->
-        <div class="flex flex-wrap justify-center gap-4 mb-8">
-            <button onclick="showCategory('coffee')" class="category-tab active px-6 py-3 rounded-full font-medium" id="coffee-tab">
-                ☕ القهوة والإسبريسو
-            </button>
-            <button onclick="showCategory('food')" class="category-tab px-6 py-3 rounded-full font-medium" id="food-tab">
-                🥪 الطعام
-            </button>
-            <button onclick="showCategory('pastries')" class="category-tab px-6 py-3 rounded-full font-medium" id="pastries-tab">
-                🥐 الحلويات والمخبوزات
-            </button>
-            <button onclick="showCategory('beverages')" class="category-tab px-6 py-3 rounded-full font-medium" id="beverages-tab">
-                🧊 المشروبات الباردة
-            </button>
-        </div>
-
-        <!-- ✅ Menu Sections -->
-        <div id="menu-content" class="fade-in">
-
-            <!-- ☕ Coffee Section -->
-            <div id="coffee" class="menu-section">
-                <div class="grid gap-6 md:grid-cols-2">
-                    <div class="menu-item bg-white rounded-xl p-6 shadow-lg hover:shadow-xl">
-                        <div class="flex justify-between items-start mb-3">
-                            <h3 class="menu-font text-xl font-semibold text-gray-800">إسبريسو</h3>
-                            <span class="text-purple-600 font-bold text-lg">٣٫٥٠ ر.س</span>
-                        </div>
-                        <p class="text-gray-600 text-sm leading-relaxed">شوت مركز من قهوتنا الخاصة.</p>
-                    </div>
-
-                    <div class="menu-item bg-white rounded-xl p-6 shadow-lg hover:shadow-xl">
-                        <div class="flex justify-between items-start mb-3">
-                            <h3 class="menu-font text-xl font-semibold text-gray-800">كابتشينو</h3>
-                            <span class="text-purple-600 font-bold text-lg">٤٫٧٥ ر.س</span>
-                        </div>
-                        <p class="text-gray-600 text-sm leading-relaxed">إسبريسو مع حليب مبخر ورغوة ناعمة.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 🥪 Food Section -->
-            <div id="food" class="menu-section hidden">
-                <div class="grid gap-6 md:grid-cols-2">
-                    <div class="menu-item bg-white rounded-xl p-6 shadow-lg hover:shadow-xl">
-                        <div class="flex justify-between items-start mb-3">
-                            <h3 class="menu-font text-xl font-semibold text-gray-800">توست الأفوكادو</h3>
-                            <span class="text-purple-600 font-bold text-lg">١٢ ر.س</span>
-                        </div>
-                        <p class="text-gray-600 text-sm leading-relaxed">أفوكادو مهروس على خبز ساوردو مع طماطم وفلفل وجبن فيتا.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 🥐 Pastries Section -->
-            <div id="pastries" class="menu-section hidden">
-                <div class="grid gap-6 md:grid-cols-2">
-                    <div class="menu-item bg-white rounded-xl p-6 shadow-lg hover:shadow-xl">
-                        <div class="flex justify-between items-start mb-3">
-                            <h3 class="menu-font text-xl font-semibold text-gray-800">كرواسون زبدة</h3>
-                            <span class="text-purple-600 font-bold text-lg">٤ ر.س</span>
-                        </div>
-                        <p class="text-gray-600 text-sm leading-relaxed">كرواسون فرنسي طازج ومقرمش.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 🧊 Beverages Section -->
-            <div id="beverages" class="menu-section hidden">
-                <div class="grid gap-6 md:grid-cols-2">
-                    <div class="menu-item bg-white rounded-xl p-6 shadow-lg hover:shadow-xl">
-                        <div class="flex justify-between items-start mb-3">
-                            <h3 class="menu-font text-xl font-semibold text-gray-800">قهوة مثلجة</h3>
-                            <span class="text-purple-600 font-bold text-lg">٤٫٢٥ ر.س</span>
-                        </div>
-                        <p class="text-gray-600 text-sm leading-relaxed">قهوة باردة مع اختيارك من الحليب.</p>
-                    </div>
-                </div>
-            </div>
-
-        </div>
+  <div class="max-w-6xl mx-auto px-4 py-12">
+    <!-- Logo and Title -->
+    <div class="text-center mb-8">
+      <img
+        src="https://i.postimg.cc/KzyLNnzN/S-logo.png"
+        alt="شعار المقهى"
+        class="mx-auto mb-4"
+        style="width: 400px; height: auto;"
+      />
+      <h1 class="text-4xl font-bold menu-font">قائمة المقهى</h1>
     </div>
 
-    <!-- ✅ JavaScript -->
-    <script>
-        function showCategory(category) {
-            // Hide all sections
-            const sections = document.querySelectorAll('.menu-section');
-            sections.forEach(section => section.classList.add('hidden'));
+    <!-- Category Tabs -->
+    <div class="flex flex-wrap justify-center gap-4 mb-8">
+      <button
+        onclick="showCategory('coffee')"
+        class="category-tab active px-6 py-3 rounded-full font-medium"
+        id="coffee-tab"
+      >
+        ☕ القهوة والإسبريسو
+      </button>
+      <button
+        onclick="showCategory('food')"
+        class="category-tab px-6 py-3 rounded-full font-medium"
+        id="food-tab"
+      >
+        🥪 الطعام
+      </button>
+      <button
+        onclick="showCategory('pastries')"
+        class="category-tab px-6 py-3 rounded-full font-medium"
+        id="pastries-tab"
+      >
+        🥐 الحلويات والمخبوزات
+      </button>
+      <button
+        onclick="showCategory('beverages')"
+        class="category-tab px-6 py-3 rounded-full font-medium"
+        id="beverages-tab"
+      >
+        🧊 المشروبات الباردة
+      </button>
+    </div>
 
-            // Show selected section
-            document.getElementById(category).classList.remove('hidden');
+    <!-- Menu Sections -->
+    <div id="menu-content" class="fade-in">
+      <!-- Coffee Section -->
+      <div id="coffee" class="menu-section">
+        <div class="grid gap-6 md:grid-cols-2">
+          <div
+            class="menu-item bg-white rounded-xl p-6 shadow-lg hover:shadow-xl"
+          >
+            <div class="flex justify-between items-start mb-3">
+              <h3 class="menu-font text-xl font-semibold text-gray-800">
+                إسبريسو
+              </h3>
+              <span class="text-purple-600 font-bold text-lg">٣٫٥٠ ر.س</span>
+            </div>
+            <p class="text-gray-600 text-sm leading-relaxed">
+              شوت مركز من قهوتنا الخاصة.
+            </p>
+          </div>
 
-            // Reset all tabs
-            const tabs = document.querySelectorAll('.category-tab');
-            tabs.forEach(tab => tab.classList.remove('active'));
+          <div
+            class="menu-item bg-white rounded-xl p-6 shadow-lg hover:shadow-xl"
+          >
+            <div class="flex justify-between items-start mb-3">
+              <h3 class="menu-font text-xl font-semibold text-gray-800">
+                كابتشينو
+              </h3>
+              <span class="text-purple-600 font-bold text-lg">٤٫٧٥ ر.س</span>
+            </div>
+            <p class="text-gray-600 text-sm leading-relaxed">
+              إسبريسو مع حليب مبخر ورغوة ناعمة.
+            </p>
+          </div>
+        </div>
+      </div>
 
-            // Activate selected tab
-            const activeTab = document.getElementById(category + '-tab');
-            if (activeTab) {
-                activeTab.classList.add('active');
-            }
+      <!-- Food Section -->
+      <div id="food" class="menu-section hidden">
+        <div class="grid gap-6 md:grid-cols-2">
+          <div
+            class="menu-item bg-white rounded-xl p-6 shadow-lg hover:shadow-xl"
+          >
+            <div class="flex justify-between items-start mb-3">
+              <h3 class="menu-font text-xl font-semibold text-gray-800">
+                توست الأفوكادو
+              </h3>
+              <span class="text-purple-600 font-bold text-lg">١٢ ر.س</span>
+            </div>
+            <p class="text-gray-600 text-sm leading-relaxed">
+              أفوكادو مهروس على خبز ساوردو مع طماطم وفلفل وجبن فيتا.
+            </p>
+          </div>
+        </div>
+      </div>
 
-            // Trigger fade animation
-            const content = document.getElementById('menu-content');
-            content.classList.remove('fade-in');
-            setTimeout(() => content.classList.add('fade-in'), 10);
-        }
-    </script>
+      <!-- Pastries Section -->
+      <div id="pastries" class="menu-section hidden">
+        <div class="grid gap-6 md:grid-cols-2">
+          <div
+            class="menu-item bg-white rounded-xl p-6 shadow-lg hover:shadow-xl"
+          >
+            <div class="flex justify-between items-start mb-3">
+              <h3 class="menu-font text-xl font-semibold text-gray-800">
+                كرواسون زبدة
+              </h3>
+              <span class="text-purple-600 font-bold text-lg">٤ ر.س</span>
+            </div>
+            <p class="text-gray-600 text-sm leading-relaxed">
+              كرواسون فرنسي طازج ومقرمش.
+            </p>
+          </div>
+        </div>
+      </div>
 
+      <!-- Beverages Section -->
+      <div id="beverages" class="menu-section hidden">
+        <div class="grid gap-6 md:grid-cols-2">
+          <div
+            class="menu-item bg-white rounded-xl p-6 shadow-lg hover:shadow-xl"
+          >
+            <div class="flex justify-between items-start mb-3">
+              <h3 class="menu-font text-xl font-semibold text-gray-800">
+                قهوة مثلجة
+              </h3>
+              <span class="text-purple-600 font-bold text-lg">٤٫٢٥ ر.س</span>
+            </div>
+            <p class="text-gray-600 text-sm leading-relaxed">
+              قهوة باردة مع اختيارك من الحليب.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    function showCategory(category) {
+      const sections = document.querySelectorAll(".menu-section");
+      sections.forEach((section) => section.classList.add("hidden"));
+
+      document.getElementById(category).classList.remove("hidden");
+
+      const tabs = document.querySelectorAll(".category-tab");
+      tabs.forEach((tab) => tab.classList.remove("active"));
+
+      const activeTab = document.getElementById(category + "-tab");
+      if (activeTab) {
+        activeTab.classList.add("active");
+      }
+
+      const content = document.getElementById("menu-content");
+      content.classList.remove("fade-in");
+      setTimeout(() => content.classList.add("fade-in"), 10);
+    }
+  </script>
 </body>
 </html>
