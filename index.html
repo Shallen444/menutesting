@@ -13,7 +13,7 @@
 
     <style>
         body {
-            @apply bg-gray-50;
+            background-color: #d1cbb1;
         }
         .menu-font {
             font-family: 'Playfair Display', serif;
@@ -24,6 +24,14 @@
         .menu-item:hover {
             transform: translateY(-2px);
             transition: all 0.3s ease;
+        }
+        .category-tab {
+            background-color: white;
+            color: #374151; /* gray-700 */
+            transition: all 0.3s ease;
+        }
+        .category-tab:hover {
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
         .category-tab.active {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -51,16 +59,16 @@
 
         <!-- ✅ Category Tabs -->
         <div class="flex flex-wrap justify-center gap-4 mb-8">
-            <button onclick="showCategory('coffee')" class="category-tab active px-6 py-3 rounded-full font-medium transition-all duration-300 hover:shadow-lg" id="coffee-tab">
+            <button onclick="showCategory('coffee')" class="category-tab active px-6 py-3 rounded-full font-medium" id="coffee-tab">
                 ☕ القهوة والإسبريسو
             </button>
-            <button onclick="showCategory('food')" class="category-tab px-6 py-3 rounded-full font-medium bg-white text-gray-700 hover:bg-gray-50 transition-all duration-300 hover:shadow-lg" id="food-tab">
+            <button onclick="showCategory('food')" class="category-tab px-6 py-3 rounded-full font-medium" id="food-tab">
                 🥪 الطعام
             </button>
-            <button onclick="showCategory('pastries')" class="category-tab px-6 py-3 rounded-full font-medium bg-white text-gray-700 hover:bg-gray-50 transition-all duration-300 hover:shadow-lg" id="pastries-tab">
+            <button onclick="showCategory('pastries')" class="category-tab px-6 py-3 rounded-full font-medium" id="pastries-tab">
                 🥐 الحلويات والمخبوزات
             </button>
-            <button onclick="showCategory('beverages')" class="category-tab px-6 py-3 rounded-full font-medium bg-white text-gray-700 hover:bg-gray-50 transition-all duration-300 hover:shadow-lg" id="beverages-tab">
+            <button onclick="showCategory('beverages')" class="category-tab px-6 py-3 rounded-full font-medium" id="beverages-tab">
                 🧊 المشروبات الباردة
             </button>
         </div>
@@ -134,20 +142,24 @@
     <!-- ✅ JavaScript -->
     <script>
         function showCategory(category) {
+            // Hide all sections
             const sections = document.querySelectorAll('.menu-section');
             sections.forEach(section => section.classList.add('hidden'));
+
+            // Show selected section
             document.getElementById(category).classList.remove('hidden');
 
+            // Reset all tabs
             const tabs = document.querySelectorAll('.category-tab');
-            tabs.forEach(tab => {
-                tab.classList.remove('active');
-                tab.classList.add('bg-white', 'text-gray-700', 'hover:bg-gray-50');
-            });
+            tabs.forEach(tab => tab.classList.remove('active'));
 
+            // Activate selected tab
             const activeTab = document.getElementById(category + '-tab');
-            activeTab.classList.add('active');
-            activeTab.classList.remove('bg-white', 'text-gray-700', 'hover:bg-gray-50');
+            if (activeTab) {
+                activeTab.classList.add('active');
+            }
 
+            // Trigger fade animation
             const content = document.getElementById('menu-content');
             content.classList.remove('fade-in');
             setTimeout(() => content.classList.add('fade-in'), 10);
