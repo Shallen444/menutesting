@@ -4,83 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>قائمة المقهى</title>
-
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter&family=Playfair+Display&display=swap" rel="stylesheet">
-
-    <style>
-        body {
-            @apply bg-gray-50;
-        }
-        .menu-font {
-            font-family: 'Playfair Display', serif;
-        }
-        .body-font {
-            font-family: 'Inter', sans-serif;
-        }
-        .menu-item:hover {
-            transform: translateY(-2px);
-            transition: all 0.3s ease;
-        }
-        .category-tab.active {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-        }
-        .fade-in {
-            animation: fadeIn 0.5s ease-in;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-    </style>
 </head>
 
-<body class="body-font">
+<body class="bg-gray-50">
 
     <div class="max-w-6xl mx-auto px-4 py-12">
-        
+
         <!-- ✅ Logo and Title -->
         <div class="text-center mb-8">
             <img src="https://i.postimg.cc/44KLHns8/sehab-logo.png" alt="شعار المقهى" class="mx-auto w-32 mb-4">
-            <h1 class="text-4xl font-bold menu-font">قائمة المقهى</h1>
+            <h1 class="text-4xl font-bold">قائمة المقهى</h1>
         </div>
 
         <!-- ✅ Category Tabs -->
         <div class="flex flex-wrap justify-center gap-4 mb-8">
-            <button onclick="showCategory('coffee')" class="category-tab active px-6 py-3 rounded-full font-medium transition-all duration-300 hover:shadow-lg" id="coffee-tab">
+            <button class="category-tab active px-6 py-3 rounded-full transition-all hover:shadow-lg bg-purple-600 text-white">
                 ☕ القهوة والإسبريسو
             </button>
-            <button onclick="showCategory('food')" class="category-tab px-6 py-3 rounded-full font-medium bg-white text-gray-700 hover:bg-gray-50 transition-all duration-300 hover:shadow-lg" id="food-tab">
+            <button class="category-tab px-6 py-3 rounded-full bg-white text-gray-700 hover:bg-gray-50 hover:shadow-lg">
                 🥪 الطعام
             </button>
-            <button onclick="showCategory('pastries')" class="category-tab px-6 py-3 rounded-full font-medium bg-white text-gray-700 hover:bg-gray-50 transition-all duration-300 hover:shadow-lg" id="pastries-tab">
+            <button class="category-tab px-6 py-3 rounded-full bg-white text-gray-700 hover:bg-gray-50 hover:shadow-lg">
                 🥐 الحلويات والمخبوزات
             </button>
-            <button onclick="showCategory('beverages')" class="category-tab px-6 py-3 rounded-full font-medium bg-white text-gray-700 hover:bg-gray-50 transition-all duration-300 hover:shadow-lg" id="beverages-tab">
+            <button class="category-tab px-6 py-3 rounded-full bg-white text-gray-700 hover:bg-gray-50 hover:shadow-lg">
                 🧊 المشروبات الباردة
             </button>
         </div>
 
-        <!-- ✅ Menu Sections -->
-        <div id="menu-content" class="fade-in">
+        <!-- ✅ Example Menu Item -->
+        <div class="grid gap-6 md:grid-cols-2">
+            <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl">
+                <div class="flex justify-between items-start mb-3">
+                    <h3 class="text-xl font-semibold text-gray-800">إسبريسو</h3>
+                    <span class="text-purple-600 font-bold text-lg">٣٫٥٠ ر.س</span>
+                </div>
+                <p class="text-gray-600 text-sm">شوت مركز من قهوتنا الخاصة.</p>
+            </div>
+        </div>
 
-            <!-- ☕ Coffee Section -->
-            <div id="coffee" class="menu-section">
-                <div class="grid gap-6 md:grid-cols-2">
-                    <div class="menu-item bg-white rounded-xl p-6 shadow-lg hover:shadow-xl">
-                        <div class="flex justify-between items-start mb-3">
-                            <h3 class="menu-font text-xl font-semibold text-gray-800">إسبريسو</h3>
-                            <span class="text-purple-600 font-bold text-lg">٣٫٥٠ ر.س</span>
-                        </div>
-                        <p class="text-gray-600 text-sm leading-relaxed">شوت مركز من قهوتنا الخاصة.</p>
-                    </div>
+    </div>
 
-                    <div class="menu-item bg-white rounded-xl p-6 shadow-lg hover:shadow-xl">
-                        <div class="flex justify-between items-start mb-3">
-                            <h3 class="menu-font text-xl font-semibold text-gray-800">كابتشينو</h3>
-                            <spa
-
+</body>
+</html>
