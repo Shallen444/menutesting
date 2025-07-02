@@ -8,7 +8,7 @@
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- Google Fonts (Manchette) -->
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Manchette&display=swap" rel="stylesheet" />
 
   <style>
@@ -20,21 +20,18 @@
     .title-font {
       font-family: 'Manchette', serif;
       color: #3a3a2e;
-      font-size: 3.5rem; /* bigger title */
+      font-size: 3.5rem;
     }
     .category-font {
       font-family: 'Manchette', serif;
       color: #6b7662;
-      font-size: 1.25rem; /* bigger categories */
+      font-size: 1.25rem;
     }
     .category-tab {
       background-color: white;
       transition: all 0.3s ease;
-      padding-left: 1.5rem;
-      padding-right: 1.5rem;
-      padding-top: 0.75rem;
-      padding-bottom: 0.75rem;
-      border-radius: 9999px; /* rounded-full */
+      padding: 0.75rem 1.5rem;
+      border-radius: 9999px;
       font-weight: 500;
       cursor: pointer;
       user-select: none;
@@ -55,7 +52,7 @@
       font-size: 1rem;
     }
     .menu-item h3 {
-      font-size: 1.375rem; /* slightly bigger menu item titles */
+      font-size: 1.375rem;
       font-weight: 600;
     }
     .menu-item:hover {
@@ -84,73 +81,41 @@
 
     <!-- Logo and Title -->
     <div class="text-center mb-8">
-      <img
-        src="https://i.postimg.cc/KzyLNnzN/S-logo.png"
-        alt="شعار المقهى"
-        class="mx-auto mb-4"
-        style="width: 400px; height: auto;"
-      />
+      <img src="https://i.postimg.cc/KzyLNnzN/S-logo.png" alt="شعار المقهى" class="mx-auto mb-4" style="width: 400px; height: auto;" />
       <h1 class="text-4xl font-bold title-font"> القائمة </h1>
     </div>
 
     <!-- Category Tabs -->
     <div class="flex flex-wrap justify-center gap-4 mb-8">
-      <button
-        onclick="showCategory('coffee')"
-        class="category-tab active category-font"
-        id="coffee-tab"
-      >
+      <button onclick="showCategory('coffee')" class="category-tab active category-font" id="coffee-tab">
         القهوة الساخنة
       </button>
-
-      <button
-        onclick="showCategory('pastries')"
-        class="category-tab category-font"
-        id="pastries-tab"
-      >
+      <button onclick="showCategory('pastries')" class="category-tab category-font" id="pastries-tab">
         الحلويات
       </button>
-
-      <button
-        onclick="showCategory('beverages')"
-        class="category-tab category-font"
-        id="beverages-tab"
-      >
-         المشروبات الباردة
+      <button onclick="showCategory('beverages')" class="category-tab category-font" id="beverages-tab">
+        المشروبات الباردة
       </button>
     </div>
 
     <!-- Menu Sections -->
     <div id="menu-content" class="fade-in">
+
       <!-- Coffee Section -->
       <div id="coffee" class="menu-section">
         <div class="grid gap-6 md:grid-cols-2">
-          <div
-            class="menu-item bg-white rounded-xl p-6 shadow-lg hover:shadow-xl menu-font"
-          >
+          <div class="menu-item bg-white rounded-xl p-6 shadow-lg hover:shadow-xl menu-font">
             <div class="flex justify-between items-start mb-3">
-              <h3>
-                إسبريسو
-              </h3>
+              <h3>إسبريسو</h3>
               <span class="text-purple-600 font-bold text-lg">٣٫٥٠ ر.س</span>
             </div>
-            <p class="text-gray-600 text-sm leading-relaxed">
-              
-            </p>
           </div>
 
-          <div
-            class="menu-item bg-white rounded-xl p-6 shadow-lg hover:shadow-xl menu-font"
-          >
+          <div class="menu-item bg-white rounded-xl p-6 shadow-lg hover:shadow-xl menu-font">
             <div class="flex justify-between items-start mb-3">
-              <h3>
-                كابتشينو
-              </h3>
+              <h3>كابتشينو</h3>
               <span class="text-purple-600 font-bold text-lg">٤٫٧٥ ر.س</span>
             </div>
-            <p class="text-gray-600 text-sm leading-relaxed">
-              إسبريسو مع حليب مبخر ورغوة ناعمة.
-            </p>
           </div>
         </div>
       </div>
@@ -158,18 +123,11 @@
       <!-- Pastries Section -->
       <div id="pastries" class="menu-section hidden">
         <div class="grid gap-6 md:grid-cols-2">
-          <div
-            class="menu-item bg-white rounded-xl p-6 shadow-lg hover:shadow-xl menu-font"
-          >
+          <div class="menu-item bg-white rounded-xl p-6 shadow-lg hover:shadow-xl menu-font">
             <div class="flex justify-between items-start mb-3">
-              <h3>
-                كرواسون زبدة
-              </h3>
+              <h3>كرواسون زبدة</h3>
               <span class="text-purple-600 font-bold text-lg">٤ ر.س</span>
             </div>
-            <p class="text-gray-600 text-sm leading-relaxed">
-              كرواسون فرنسي طازج ومقرمش.
-            </p>
           </div>
         </div>
       </div>
@@ -177,21 +135,15 @@
       <!-- Beverages Section -->
       <div id="beverages" class="menu-section hidden">
         <div class="grid gap-6 md:grid-cols-2">
-          <div
-            class="menu-item bg-white rounded-xl p-6 shadow-lg hover:shadow-xl menu-font"
-          >
+          <div class="menu-item bg-white rounded-xl p-6 shadow-lg hover:shadow-xl menu-font">
             <div class="flex justify-between items-start mb-3">
-              <h3>
-                قهوة مثلجة
-              </h3>
+              <h3>قهوة مثلجة</h3>
               <span class="text-purple-600 font-bold text-lg">٤٫٢٥ ر.س</span>
             </div>
-            <p class="text-gray-600 text-sm leading-relaxed">
-              قهوة باردة مع اختيارك من الحليب.
-            </p>
           </div>
         </div>
       </div>
+
     </div>
   </div>
 
