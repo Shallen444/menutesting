@@ -9,10 +9,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
 
   <!-- Google Fonts -->
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter&family=Playfair+Display&display=swap"
-    rel="stylesheet"
-  />
+  <link href="https://fonts.googleapis.com/css2?family=Manchette&display=swap" rel="stylesheet">
 
   <style>
     body {
@@ -20,11 +17,14 @@
     }
     .menu-font {
       font-family: "Playfair Display", serif;
-      color: #3a3a2e; /* Dark gray-green for headings */
+      color: #3a3a2e;
     }
     .body-font {
       font-family: "Inter", sans-serif;
-      color: #5e6150; /* Medium olive gray for body text */
+      color: #5e6150;
+    }
+    .title-font {
+      font-family: 'Manchette', serif;
     }
     .menu-item:hover {
       transform: translateY(-2px);
@@ -32,12 +32,12 @@
     }
     .category-tab {
       background-color: white;
-      color: #6b7662; /* Buttons base color */
+      color: #6b7662;
       transition: all 0.3s ease;
     }
     .category-tab:hover {
-      background-color: #b5b895; /* Pale sage hover */
-      color: #3a3a2e; /* Dark text on hover */
+      background-color: #b5b895;
+      color: #3a3a2e;
     }
     .category-tab.active {
       background: linear-gradient(135deg, #8f9b70 0%, #6b7662 100%);
@@ -70,7 +70,7 @@
         class="mx-auto mb-4"
         style="width: 400px; height: auto;"
       />
-      <h1 class="text-4xl font-bold menu-font">قائمة المقهى</h1>
+      <h1 class="text-4xl font-bold title-font">قائمة المقهى</h1>
     </div>
 
     <!-- Category Tabs -->
@@ -82,6 +82,7 @@
       >
         ☕ القهوة والإسبريسو
       </button>
+
       <button
         onclick="showCategory('pastries')"
         class="category-tab px-6 py-3 rounded-full font-medium"
@@ -89,6 +90,7 @@
       >
         🥐 الحلويات والمخبوزات
       </button>
+
       <button
         onclick="showCategory('beverages')"
         class="category-tab px-6 py-3 rounded-full font-medium"
