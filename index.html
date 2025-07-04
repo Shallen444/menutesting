@@ -13,7 +13,7 @@
 
   <style>
     body {
-      background-color: #fffae9; /* ✅ background changed */
+      background-color: #fffae9;
       font-family: 'Manchette', serif;
       color: #5e6150;
     }
@@ -57,6 +57,20 @@
       color: #3a3a2e;
     }
 
+    .menu-item {
+      background-color: #f7f3dd;
+      border: 1px solid #e2decf;
+      border-radius: 1rem;
+      padding: 1.5rem;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s ease;
+    }
+
+    .menu-item:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+    }
+
     .menu-item h3 {
       font-size: 1.5rem;
       font-weight: 600;
@@ -66,11 +80,6 @@
       color: #9ea894;
       font-weight: bold;
       font-size: 1.125rem;
-    }
-
-    .menu-item:hover {
-      transform: translateY(-2px);
-      transition: all 0.3s ease;
     }
 
     .fade-in {
@@ -91,7 +100,6 @@
 </head>
 
 <body>
-
   <div class="max-w-6xl mx-auto px-4 py-12">
     <!-- Logo and Title -->
     <div class="text-center mb-8">
@@ -118,45 +126,45 @@
       <!-- Coffee Section -->
       <div id="coffee" class="menu-section">
         <div class="grid gap-6 md:grid-cols-2">
-          <div class="menu-item bg-white rounded-xl p-6 shadow-lg hover:shadow-xl menu-font"><div class="flex justify-between items-start mb-3"><h3>قهوة اليوم</h3><span class="price" dir="ltr">8</span></div></div>
-          <div class="menu-item bg-white rounded-xl p-6 shadow-lg hover:shadow-xl menu-font"><div class="flex justify-between items-start mb-3"><h3>قهوة مقطرة</h3><span class="price" dir="ltr">14</span></div></div>
-          <div class="menu-item bg-white rounded-xl p-6 shadow-lg hover:shadow-xl menu-font"><div class="flex justify-between items-start mb-3"><h3>سبانش</h3><span class="price" dir="ltr">15</span></div></div>
-          <div class="menu-item bg-white rounded-xl p-6 shadow-lg hover:shadow-xl menu-font"><div class="flex justify-between items-start mb-3"><h3>فلات وايت</h3><span class="price" dir="ltr">14</span></div></div>
-          <div class="menu-item bg-white rounded-xl p-6 shadow-lg hover:shadow-xl menu-font"><div class="flex justify-between items-start mb-3"><h3>ماتشا</h3><span class="price" dir="ltr">16</span></div></div>
-          <div class="menu-item bg-white rounded-xl p-6 shadow-lg hover:shadow-xl menu-font"><div class="flex justify-between items-start mb-3"><h3>كابتشينو</h3><span class="price" dir="ltr">14</span></div></div>
-          <div class="menu-item bg-white rounded-xl p-6 shadow-lg hover:shadow-xl menu-font"><div class="flex justify-between items-start mb-3"><h3>أمريكانو</h3><span class="price" dir="ltr">10</span></div></div>
-          <div class="menu-item bg-white rounded-xl p-6 shadow-lg hover:shadow-xl menu-font"><div class="flex justify-between items-start mb-3"><h3>كورتادو</h3><span class="price" dir="ltr">12</span></div></div>
-          <div class="menu-item bg-white rounded-xl p-6 shadow-lg hover:shadow-xl menu-font"><div class="flex justify-between items-start mb-3"><h3>إسبريسو</h3><span class="price" dir="ltr">9</span></div></div>
-          <div class="menu-item bg-white rounded-xl p-6 shadow-lg hover:shadow-xl menu-font"><div class="flex justify-between items-start mb-3"><h3>لاتيه</h3><span class="price" dir="ltr">15</span></div></div>
-          <div class="menu-item bg-white rounded-xl p-6 shadow-lg hover:shadow-xl menu-font"><div class="flex justify-between items-start mb-3"><h3>بيكولو لاتيه</h3><span class="price" dir="ltr">10</span></div></div>
+          <div class="menu-item menu-font"><div class="flex justify-between items-start mb-3"><h3>قهوة اليوم</h3><span class="price" dir="ltr">8</span></div></div>
+          <div class="menu-item menu-font"><div class="flex justify-between items-start mb-3"><h3>قهوة مقطرة</h3><span class="price" dir="ltr">14</span></div></div>
+          <div class="menu-item menu-font"><div class="flex justify-between items-start mb-3"><h3>سبانش</h3><span class="price" dir="ltr">15</span></div></div>
+          <div class="menu-item menu-font"><div class="flex justify-between items-start mb-3"><h3>فلات وايت</h3><span class="price" dir="ltr">14</span></div></div>
+          <div class="menu-item menu-font"><div class="flex justify-between items-start mb-3"><h3>ماتشا</h3><span class="price" dir="ltr">16</span></div></div>
+          <div class="menu-item menu-font"><div class="flex justify-between items-start mb-3"><h3>كابتشينو</h3><span class="price" dir="ltr">14</span></div></div>
+          <div class="menu-item menu-font"><div class="flex justify-between items-start mb-3"><h3>أمريكانو</h3><span class="price" dir="ltr">10</span></div></div>
+          <div class="menu-item menu-font"><div class="flex justify-between items-start mb-3"><h3>كورتادو</h3><span class="price" dir="ltr">12</span></div></div>
+          <div class="menu-item menu-font"><div class="flex justify-between items-start mb-3"><h3>إسبريسو</h3><span class="price" dir="ltr">9</span></div></div>
+          <div class="menu-item menu-font"><div class="flex justify-between items-start mb-3"><h3>لاتيه</h3><span class="price" dir="ltr">15</span></div></div>
+          <div class="menu-item menu-font"><div class="flex justify-between items-start mb-3"><h3>بيكولو لاتيه</h3><span class="price" dir="ltr">10</span></div></div>
         </div>
       </div>
 
       <!-- Pastries Section -->
       <div id="pastries" class="menu-section hidden">
         <div class="grid gap-6 md:grid-cols-2">
-          <div class="menu-item bg-white rounded-xl p-6 shadow-lg hover:shadow-xl menu-font"><div class="flex justify-between items-start mb-3"><h3>تراميسيو</h3><span class="price" dir="ltr">21</span></div></div>
-          <div class="menu-item bg-white rounded-xl p-6 shadow-lg hover:shadow-xl menu-font"><div class="flex justify-between items-start mb-3"><h3>كرانشي كيك</h3><span class="price" dir="ltr">14</span></div></div>
-          <div class="menu-item bg-white rounded-xl p-6 shadow-lg hover:shadow-xl menu-font"><div class="flex justify-between items-start mb-3"><h3>مادلين تمر</h3><span class="price" dir="ltr">12</span></div></div>
-          <div class="menu-item bg-white rounded-xl p-6 shadow-lg hover:shadow-xl menu-font"><div class="flex justify-between items-start mb-3"><h3>كوكيز</h3><span class="price" dir="ltr">10</span></div></div>
-          <div class="menu-item bg-white rounded-xl p-6 shadow-lg hover:shadow-xl menu-font"><div class="flex justify-between items-start mb-3"><h3>كرات الجوز</h3><span class="price" dir="ltr">10</span></div></div>
-          <div class="menu-item bg-white rounded-xl p-6 shadow-lg hover:shadow-xl menu-font"><div class="flex justify-between items-start mb-3"><h3>تارت بيكان</h3><span class="price" dir="ltr">6</span></div></div>
-          <div class="menu-item bg-white rounded-xl p-6 shadow-lg hover:shadow-xl menu-font"><div class="flex justify-between items-start mb-3"><h3>تارت لوز</h3><span class="price" dir="ltr">6</span></div></div>
+          <div class="menu-item menu-font"><div class="flex justify-between items-start mb-3"><h3>تراميسيو</h3><span class="price" dir="ltr">21</span></div></div>
+          <div class="menu-item menu-font"><div class="flex justify-between items-start mb-3"><h3>كرانشي كيك</h3><span class="price" dir="ltr">14</span></div></div>
+          <div class="menu-item menu-font"><div class="flex justify-between items-start mb-3"><h3>مادلين تمر</h3><span class="price" dir="ltr">12</span></div></div>
+          <div class="menu-item menu-font"><div class="flex justify-between items-start mb-3"><h3>كوكيز</h3><span class="price" dir="ltr">10</span></div></div>
+          <div class="menu-item menu-font"><div class="flex justify-between items-start mb-3"><h3>كرات الجوز</h3><span class="price" dir="ltr">10</span></div></div>
+          <div class="menu-item menu-font"><div class="flex justify-between items-start mb-3"><h3>تارت بيكان</h3><span class="price" dir="ltr">6</span></div></div>
+          <div class="menu-item menu-font"><div class="flex justify-between items-start mb-3"><h3>تارت لوز</h3><span class="price" dir="ltr">6</span></div></div>
         </div>
       </div>
 
       <!-- Beverages Section -->
       <div id="beverages" class="menu-section hidden">
         <div class="grid gap-6 md:grid-cols-2">
-          <div class="menu-item bg-white rounded-xl p-6 shadow-lg hover:shadow-xl menu-font"><div class="flex justify-between items-start mb-3"><h3>آيس دريب</h3><span class="price" dir="ltr">15</span></div></div>
-          <div class="menu-item bg-white rounded-xl p-6 shadow-lg hover:shadow-xl menu-font"><div class="flex justify-between items-start mb-3"><h3>آيس سبانش</h3><span class="price" dir="ltr">16</span></div></div>
-          <div class="menu-item bg-white rounded-xl p-6 shadow-lg hover:shadow-xl menu-font"><div class="flex justify-between items-start mb-3"><h3>آيس كورتادو</h3><span class="price" dir="ltr">13</span></div></div>
-          <div class="menu-item bg-white rounded-xl p-6 shadow-lg hover:shadow-xl menu-font"><div class="flex justify-between items-start mb-3"><h3>آيس فلات وايت</h3><span class="price" dir="ltr">15</span></div></div>
-          <div class="menu-item bg-white rounded-xl p-6 shadow-lg hover:shadow-xl menu-font"><div class="flex justify-between items-start mb-3"><h3>آيس لاتيه</h3><span class="price" dir="ltr">15</span></div></div>
-          <div class="menu-item bg-white rounded-xl p-6 shadow-lg hover:shadow-xl menu-font"><div class="flex justify-between items-start mb-3"><h3>آيس ماتشا</h3><span class="price" dir="ltr">18</span></div></div>
-          <div class="menu-item bg-white rounded-xl p-6 shadow-lg hover:shadow-xl menu-font"><div class="flex justify-between items-start mb-3"><h3>آيس كركديه</h3><span class="price" dir="ltr">14</span></div></div>
-          <div class="menu-item bg-white rounded-xl p-6 shadow-lg hover:shadow-xl menu-font"><div class="flex justify-between items-start mb-3"><h3>الفريدو</h3><span class="price" dir="ltr">12</span></div></div>
-          <div class="menu-item bg-white rounded-xl p-6 shadow-lg hover:shadow-xl menu-font"><div class="flex justify-between items-start mb-3"><h3>ماء</h3><span class="price" dir="ltr">1</span></div></div>
+          <div class="menu-item menu-font"><div class="flex justify-between items-start mb-3"><h3>آيس دريب</h3><span class="price" dir="ltr">15</span></div></div>
+          <div class="menu-item menu-font"><div class="flex justify-between items-start mb-3"><h3>آيس سبانش</h3><span class="price" dir="ltr">16</span></div></div>
+          <div class="menu-item menu-font"><div class="flex justify-between items-start mb-3"><h3>آيس كورتادو</h3><span class="price" dir="ltr">13</span></div></div>
+          <div class="menu-item menu-font"><div class="flex justify-between items-start mb-3"><h3>آيس فلات وايت</h3><span class="price" dir="ltr">15</span></div></div>
+          <div class="menu-item menu-font"><div class="flex justify-between items-start mb-3"><h3>آيس لاتيه</h3><span class="price" dir="ltr">15</span></div></div>
+          <div class="menu-item menu-font"><div class="flex justify-between items-start mb-3"><h3>آيس ماتشا</h3><span class="price" dir="ltr">18</span></div></div>
+          <div class="menu-item menu-font"><div class="flex justify-between items-start mb-3"><h3>آيس كركديه</h3><span class="price" dir="ltr">14</span></div></div>
+          <div class="menu-item menu-font"><div class="flex justify-between items-start mb-3"><h3>الفريدو</h3><span class="price" dir="ltr">12</span></div></div>
+          <div class="menu-item menu-font"><div class="flex justify-between items-start mb-3"><h3>ماء</h3><span class="price" dir="ltr">1</span></div></div>
         </div>
       </div>
     </div>
@@ -182,6 +190,5 @@
       setTimeout(() => content.classList.add("fade-in"), 10);
     }
   </script>
-
 </body>
 </html>
