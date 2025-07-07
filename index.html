@@ -85,39 +85,49 @@
       }
     }
 
-    .social-icon {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 48px;
-      height: 48px;
-      transition: background-color 0.3s ease;
+    /* Social icons container */
+    .social-icons a img {
+      width: 28px;
+      height: 28px;
+      transition: transform 0.3s ease;
     }
 
-    .social-icon:focus {
-      outline: 2px solid #8f9b70;
-      outline-offset: 2px;
+    .social-icons a:hover img {
+      transform: scale(1.15);
     }
   </style>
 </head>
 <body>
 
   <div class="max-w-6xl mx-auto px-4 py-12">
-    <!-- Logo and Title -->
+    <!-- Logo and Title + Social Icons -->
     <div class="text-center mb-8">
-      <img src="https://i.postimg.cc/KzyLNnzN/S-logo.png" alt="شعار المقهى" class="mx-auto mb-4" style="max-width: 100%; height: auto;" />
+      <img src="https://i.postimg.cc/KzyLNnzN/S-logo.png" alt="شعار المقهى" class="mx-auto mb-4" style="width: 400px; height: auto;" />
       <h1 class="text-4xl font-bold title-font"> القائمة </h1>
+
+      <!-- Social Media Icons -->
+      <div class="flex justify-center items-center gap-6 mt-4 social-icons">
+        <a href="https://wa.me/966590081035" target="_blank" aria-label="WhatsApp" rel="noopener noreferrer">
+          <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" />
+        </a>
+        <a href="https://www.tiktok.com/@sehab.ksa" target="_blank" aria-label="TikTok" rel="noopener noreferrer">
+          <img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png" alt="TikTok" />
+        </a>
+        <a href="https://www.instagram.com/sehab.ksa" target="_blank" aria-label="Instagram" rel="noopener noreferrer">
+          <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" />
+        </a>
+      </div>
     </div>
 
     <!-- Category Tabs -->
     <div class="flex flex-wrap justify-center gap-4 mb-8">
-      <button onclick="showCategory('coffee')" class="category-tab active category-font" id="coffee-tab" type="button">
+      <button onclick="showCategory('coffee')" class="category-tab active category-font" id="coffee-tab">
         القهوة الساخنة
       </button>
-      <button onclick="showCategory('pastries')" class="category-tab category-font" id="pastries-tab" type="button">
+      <button onclick="showCategory('pastries')" class="category-tab category-font" id="pastries-tab">
         الحلويات
       </button>
-      <button onclick="showCategory('beverages')" class="category-tab category-font" id="beverages-tab" type="button">
+      <button onclick="showCategory('beverages')" class="category-tab category-font" id="beverages-tab">
         المشروبات الباردة
       </button>
     </div>
@@ -171,32 +181,6 @@
       </div>
 
     </div>
-
-    <!-- Social Media Links -->
-    <div class="flex justify-center gap-6 mt-12">
-      <a href="https://facebook.com/yourprofile" target="_blank" rel="noopener" aria-label="Facebook"
-        class="social-icon bg-[#1877F2] text-white p-3 rounded-full shadow-lg hover:bg-[#145dbf] transition" type="button">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-          <path
-            d="M22.675 0h-21.35C.6 0 0 .6 0 1.325v21.351C0 23.4.6 24 1.325 24h11.495v-9.294H9.691v-3.622h3.129V8.413c0-3.1 1.894-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.796.715-1.796 1.763v2.31h3.588l-.467 3.622h-3.121V24h6.116C23.4 24 24 23.4 24 22.676V1.325C24 .6 23.4 0 22.675 0z" />
-        </svg>
-      </a>
-      <a href="https://instagram.com/yourprofile" target="_blank" rel="noopener" aria-label="Instagram"
-        class="social-icon bg-gradient-to-tr from-[#f58529] via-[#dd2a7b] to-[#8134af] text-white p-3 rounded-full shadow-lg hover:brightness-90 transition" type="button">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-          <path
-            d="M7.75 2h8.5A5.75 5.75 0 0122 7.75v8.5A5.75 5.75 0 0116.25 22h-8.5A5.75 5.75 0 012 16.25v-8.5A5.75 5.75 0 017.75 2zm0 2A3.75 3.75 0 004 7.75v8.5A3.75 3.75 0 007.75 20h8.5a3.75 3.75 0 003.75-3.75v-8.5A3.75 3.75 0 0016.25 4h-8.5zm8.75 1.75a1 1 0 110 2 1 1 0 010-2zM12 7a5 5 0 110 10 5 5 0 010-10zm0 2a3 3 0 100 6 3 3 0 000-6z" />
-        </svg>
-      </a>
-      <a href="https://twitter.com/yourprofile" target="_blank" rel="noopener" aria-label="Twitter"
-        class="social-icon bg-[#1DA1F2] text-white p-3 rounded-full shadow-lg hover:bg-[#0d8ddb] transition" type="button">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-          <path
-            d="M23.954 4.569c-.885.39-1.83.654-2.825.775 1.014-.611 1.794-1.574 2.163-2.724-.949.566-2.004.978-3.127 1.2-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 3.015-4.797 6.045C7.728 8.087 4.1 6.128 1.671 3.149c-.35.602-.552 1.3-.552 2.042 0 1.41.722 2.656 1.823 3.385-.67-.022-1.3-.205-1.85-.512v.051c0 1.974 1.405 3.62 3.292 3.99-.343.093-.705.142-1.077.142-.264 0-.52-.025-.77-.074.52 1.622 2.034 2.8 3.824 2.83-1.402 1.1-3.168 1.75-5.09 1.75-.332 0-.66-.02-.983-.058 1.819 1.165 3.983 1.845 6.304 1.845 7.564 0 11.703-6.254 11.703-11.667 0-.18-.004-.355-.012-.53.802-.58 1.5-1.3 2.05-2.13z" />
-        </svg>
-      </a>
-    </div>
-
   </div>
 
   <!-- JavaScript -->
